@@ -35,7 +35,7 @@ function askCustomer() {
         name: "quantity"
         }        
     ]) .then(function(response){
-        console.log(response);
+        //console.log(response);
         checkInventory(response);
         // go to the db where the item_id === your item and verify the stock
         //if stcok < the quatity then yo don't have enought 
@@ -44,7 +44,7 @@ function askCustomer() {
 }
 function checkInventory(response) {
     connection.query("SELECT * FROM Products WHERE item_id = " + response.item, function(err, res) {
-        console.log(res);
+        //console.log(res);
         if(res[0].stock_quantity < response.quantity) {
             console.log("Insufficient quantity!");
             showProducts()
