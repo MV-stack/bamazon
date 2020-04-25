@@ -37,9 +37,9 @@ function askCustomer() {
     ]) .then(function(response){
         //console.log(response);
         checkInventory(response);
-        // go to the db where the item_id === your item and verify the stock
-        //if stcok < the quatity then yo don't have enought 
-        // if enough then sell it and update the db 
+        // go to the db where the item_id === your item and verify the stock quantity
+        // if stock is insufficient inform the customer their isn't enough in stock to complete the order 
+        // if sufficient stock then sell item and update the database. 
     })    
 }
 function checkInventory(response) {
